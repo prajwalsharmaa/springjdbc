@@ -26,11 +26,11 @@ public class App
         StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
         
         Student student = new Student();
-        student.setId(344);
-        student.setCity("Bhaktapurii");
-        student.setName("Ramesh Budhathoki");
+        student.setId(374);
+        student.setCity("Biratnagar");
+        student.setName("Updated Magar");
         
-        int result = studentDao.insert(student);
+        int result = studentDao.change(student);
         System.out.println("student added"+ result);
     }
 }
