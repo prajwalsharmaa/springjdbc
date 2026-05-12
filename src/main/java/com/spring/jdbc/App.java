@@ -29,8 +29,12 @@ public class App
         student.setId(374);
         student.setCity("Biratnagar");
         student.setName("Updated Magar");
-        
-        int result = studentDao.change(student);
-        System.out.println("student added"+ result);
+		/*
+		 * int result = studentDao.insert(student); int result =
+		 * studentDao.change(student);
+		 */
+        int result = studentDao.delete(456);
+
+        System.out.println("student deleted "+ result);
     }
 }
