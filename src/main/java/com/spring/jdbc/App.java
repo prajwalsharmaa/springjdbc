@@ -3,6 +3,7 @@ package com.spring.jdbc;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -11,7 +12,8 @@ import com.spring.jdbc.entities.Student;
 
 public class App {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+		//ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(Jdbcconfig.class);
 
 //		  JdbcTemplate template = (JdbcTemplate) context.getBean("jdbcTemplate");
 //		  System.out.println("Jdbc Program Started");
@@ -23,7 +25,7 @@ public class App {
 		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 
 		Student student = new Student();
-		student.setId(111);
+		student.setId(109);
 		student.setCity("Biratnagar");
 		student.setName("New Student");
 		// Insert
@@ -33,9 +35,9 @@ public class App {
 //		  int result = studentDao.change(student);
 //		  
 //		//Delete
-//		  int result = studentDao.delete(456);
+//		  int result2 = studentDao.delete(34);
 //		  
-//		  System.out.println("student deleted "+ result);
+//		  System.out.println("student deleted "+ result2);
 		// Select
 		Student student1 = studentDao.getStudent(222);
 		System.out.println(student1);
