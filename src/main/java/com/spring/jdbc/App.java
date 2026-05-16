@@ -8,6 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.spring.jdbc.dao.StudentDao;
+import com.spring.jdbc.daopractice.EmployeeDao;
+import com.spring.jdbc.entities.Employee;
 import com.spring.jdbc.entities.Student;
 
 public class App {
@@ -23,14 +25,17 @@ public class App {
 //		  System.out.println("number of record inserted.."+result);
 
 		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
-
+		EmployeeDao employeeDao = context.getBean("employeeDao",EmployeeDao.class);
 		Student student = new Student();
-		student.setId(107);
+		student.setId(147);
 		student.setCity("Biratnagar");
 		student.setName("New Student");
+		
+		Employee employee = new Employee(101,"Prajwal Sharma",56000);
+		
 		// Insert
 		int result = studentDao.insert(student);
-
+		int result1 = employeeDao.insert(employee);
 		// Update
 //		  int result = studentDao.change(student);
 //		  

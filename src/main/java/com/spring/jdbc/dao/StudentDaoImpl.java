@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.spring.jdbc.entities.Student;
 @Component("studentDao")
 public  class StudentDaoImpl implements StudentDao{
-	@Autowired
+	
 	private JdbcTemplate jdbcTemplate;
 	//Insert operation
 	public int insert(Student student) {
@@ -49,6 +49,7 @@ public  class StudentDaoImpl implements StudentDao{
 		List<Student> students = this.jdbcTemplate.query(query, new RowMapperImpl());
 		return students;
 	}
+
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}

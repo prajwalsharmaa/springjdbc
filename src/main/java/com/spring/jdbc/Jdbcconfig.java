@@ -12,7 +12,7 @@ import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.dao.StudentDaoImpl;
 
 @Configuration
-@ComponentScan(basePackages = {"com.spring.jdbc.dao"})
+@ComponentScan(basePackages = {"com.spring.jdbc.dao","com.spring.jdbc.daopractice"})
 public class Jdbcconfig {
 	@Bean(name = {"ds"})
 	public DataSource getDataSource() {
